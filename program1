@@ -1,0 +1,46 @@
+import java.util.*;
+public class program1 {
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		String str = in.next();
+		String str2="";
+		char[] ch = str.toCharArray();
+		int m= ch.length/2;
+		int flag =0;
+		int space =0;
+		for(int i=0;i<=ch.length/2;i++) {
+			for(int k=space;k<ch.length;k++)
+				System.out.print(" ");
+			for(int j=0;j<=i;j++) {
+				if(m+j<ch.length ) {
+				    System.out.print(ch[m+j]);
+				    if(i==m)
+				    str2=str2+ch[m+j];
+			}
+				else {
+					flag = 1;
+				}
+				
+			}
+			if(flag == 1){
+				break;
+			}
+			System.out.println();
+			space++;
+		}
+		
+		flag =0;
+		
+		for(int i=0;i<ch.length/2;i++) {
+			for(int k=space;k<ch.length;k++)
+				System.out.print(" ");
+			System.out.print(str2);
+			for(int j=0;j<=i;j++) {    
+				    System.out.print(ch[j]);	
+			}
+			
+			System.out.println();
+			space++;
+		}
+	}
+}
